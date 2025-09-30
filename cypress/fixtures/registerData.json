@@ -1,0 +1,12 @@
+{
+    "firstName": "Ajay",
+    "lastName": "Kumar",
+    "address": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "phone": "1234567890",
+    "ssn": "123456789",
+    "username": "ajaykumar",
+    "password": "Password123"
+}

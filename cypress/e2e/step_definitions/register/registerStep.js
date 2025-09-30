@@ -4,7 +4,7 @@ const RegisterPage = require('../../pages/RegisterPage');
 
 const registerPage = new RegisterPage();
 
-Given('the user is on the registration page',  () => {
+Given('the user is on the registration page for user1',  () => {
   registerPage.visit();
   cy.screenshot('URL-HomePage');
   registerPage.registerButton();
@@ -13,7 +13,7 @@ Given('the user is on the registration page',  () => {
 
 When('the user fills out all required fields with valid information', () => {
   cy.fixture('registerData').then((data) => {
-    registerPage.fillRequiredFields(data);
+    registerPage.fillRequiredFields(data.user1);
     cy.screenshot('filled-fields');
     registerPage.submit();
   });

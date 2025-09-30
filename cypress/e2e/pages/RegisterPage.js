@@ -39,6 +39,12 @@ class RegisterPage {
 
     submit(){
         cy.xpath('//input[@value="Register"]').click();
+        cy.wait(2000); // wait for 2 seconds
+    }
+
+    logoutButton(){
+        cy.xpath('//a[text()="Log Out"]').click();
+        cy.wait(1000); // wait for 1 second
     }
 
     getSuccessMessage(){
@@ -48,5 +54,14 @@ class RegisterPage {
     getErrorMessage(errMessage){
         return cy.xpath(`//span[contains(text(),"${errMessage}")]`);
     }
+
+    goToAccountOverview(){
+        cy.xpath('//a[text()="Accounts Overview"]').click();
+    }
+
+    getTotalAmount(){
+        return cy.xpath("//td/b[text()='Total']/ancestor::td/following-sibling::td/b").invoke('text');
+    }
+
 }
 module.exports = RegisterPage;

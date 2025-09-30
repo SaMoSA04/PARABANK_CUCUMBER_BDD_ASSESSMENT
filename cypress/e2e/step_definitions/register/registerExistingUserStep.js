@@ -7,39 +7,43 @@ const registerPage = new RegisterPage();
  For execution of this file ALONE, I will be registering the user and again trying to register with the same username to test existing user scenario.
  This is for demonstration to keep the data within the session.
 */
-Given('the user is on the registration page',  () => {
+Given('the user is on the registration page for user3',  () => {
   registerPage.visit();
   cy.screenshot('URL-HomePage');
   registerPage.registerButton();
-  cy.screenshot('User 4: registration-page');
+  cy.screenshot('Existing User: registration-page');
 });
 
-When('the user fills out all required fields with valid information with User4 data', () => {
+When('the user fills out all required fields with valid information with User3 data', () => {
   cy.fixture('registerData').then((data) => {
-    registerPage.fillRequiredFields(data.user4);
-    cy.screenshot('User 4: filled-fields');
+    registerPage.fillRequiredFields(data.user3);
+    cy.screenshot('Existing User: filled-fields');
     registerPage.submit();
   });
 });
 
-Then('the user should see a message confirming account creation for User4', () => {
+Then('the user should see a message confirming account creation for User3', () => {
   registerPage.getSuccessMessage().should('be.visible');
-  cy.screenshot('User 4: success-message');
+  cy.screenshot('Existing User: success-message');
 });
 
-When('the user fills out all required fields with an existing username', () => {
+Then('the user clicks on Log Out and selects Registration link again', () => {
+  registerPage.logoutButton();
+  registerPage.registerButton();
+  cy.screenshot('Existing User: registration-page-again');
+});
+
+Then('the user fills out all the fields with existing username', () => {
   cy.fixture('registerData').then((data) => {
-    registerPage.registerButton();
     registerPage.fillRequiredFields(data.user3);
     cy.wrap(data.user3.errorMessage).as('expectedErrorMessage');
-    cy.screenshot('filled-fields');
+    cy.screenshot('Duplicate Entry: filled-fields');
   });
 });
 
-When('the user submits the registration form', () => {
+Then('the user submits the registration form', () => {
   registerPage.submit();
-  cy.wait('2000');
-  cy.screenshot('after-submit');
+  cy.screenshot('Duplicate Entry: after-submit');
 });
 
 Then('the user should see error messages indicating username already exists', () => {

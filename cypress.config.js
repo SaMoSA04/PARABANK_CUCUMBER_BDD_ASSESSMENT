@@ -5,6 +5,13 @@ const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-pr
 async function setupNodeEvents(on, config) {
     await addCucumberPreprocessorPlugin(on, config);
 
+    on('task', {
+        log(message) {
+            console.log(message);
+            return null;
+        },
+    });
+
     const options = {
         webpackOptions: {
             module: {
@@ -48,6 +55,17 @@ module.exports = {
     default: defineConfig({
         video: true,
         videoUploadOnPasses: true,
+        reporter: 'mochawesome',
+        reporterOptions: {
+            reportDir: 'cypress/reports',
+            overwrite: false,
+            html: true,
+            json: true,
+            timestamp: 'mmddyyyy_HHMMss',
+            charts: true,
+        },
+        viewportWidth: 1280,
+        viewportHeight: 720,
         e2e: {
             specPattern: "**/*.{js,feature}",
             // stepDefinitions: "cypress/e2e/step_definitions/**/*.js",

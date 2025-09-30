@@ -8,4 +8,12 @@ module.exports = (on, config) => {
     watchOptions: {},
   };
   on('file:preprocessor', webpack(options));
+
+  on('task', {
+    log(message) {
+      console.log(message);
+      return null;
+    },
+  });
+
 };

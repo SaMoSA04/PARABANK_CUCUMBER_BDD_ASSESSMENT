@@ -4,6 +4,13 @@ const RegisterPage = require('../../pages/RegisterPage');
 
 const registerPage = new RegisterPage();
 
+/* Steps:
+ • Launch the URL and navigate to Registration page
+ • Fill out all the required fields with valid information
+ • Submit the form
+ • Verify account creation success message
+*/
+
 Given('the user is on the registration page for user1',  () => {
   registerPage.visit();
   cy.screenshot('URL-HomePage');

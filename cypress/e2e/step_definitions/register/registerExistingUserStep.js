@@ -6,7 +6,15 @@ const registerPage = new RegisterPage();
 /*
  For execution of this file ALONE, I will be registering the user and again trying to register with the same username to test existing user scenario.
  This is for demonstration to keep the data within the session.
+ Steps: 
+ • Launch the URL and navigate to Registration page
+ • Fill out all the required fields and submit the form
+ • Verify account creation success message
+ • Log out and navigate to Registration page again
+ • Fill out the form again with the same username
+ • Submit the form and verify error message for existing username
 */
+
 Given('the user is on the registration page for user3',  () => {
   registerPage.visit();
   cy.screenshot('URL-HomePage');

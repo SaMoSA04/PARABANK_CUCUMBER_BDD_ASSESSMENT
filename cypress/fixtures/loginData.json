@@ -1,0 +1,14 @@
+{
+    "user1": {
+        "firstName": "Ajay",
+        "lastName": "Verman",
+        "address": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "phone": "1234567890",
+        "ssn": "123456789",
+        "username": "vermanajay",
+        "password": "Password123"
+    }
+}

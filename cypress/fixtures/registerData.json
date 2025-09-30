@@ -1,6 +1,6 @@
 {
     "user1": {
-        "firstName": "Ajay",
+        "firstName": "Ajaya",
         "lastName": "Kumar",
         "address": "123 Main St",
         "city": "New York",
@@ -8,7 +8,7 @@
         "zip": "10001",
         "phone": "1234567890",
         "ssn": "123456789",
-        "username": "ajayaakumar",
+        "username": "ajayaakumara",
         "password": "Password123"
     },
     "user2": {
@@ -24,28 +24,40 @@
         "errorMessage": "Last name is required."
     },
     "user3": {
-        "firstName": "Manish",
-        "lastName": "Gupta",
+        "firstName": "Manisha",
+        "lastName": "Sabo",
         "address": "123 Main St",
         "city": "New York",
         "state": "NY",
         "zip": "10001",
         "phone": "1234567890",
         "ssn": "123456789",
-        "username": "guptamanish",
+        "username": "saboManisha",
         "password": "Password123",
         "errorMessage": "This username already exists."
     },
     "user4": {
-        "firstName": "Priyam",
-        "lastName": "Sharman",
+        "firstName": "Vidya",
+        "lastName": "Mandal",
         "address": "456 Park Ave",
         "city": "Boston",
         "state": "MA",
         "zip": "02118",
         "phone": "9876543210",
         "ssn": "987654321",
-        "username": "priyamsharman",
+        "username": "vidyaMandal",
         "password": "Password456"
+    },
+    "user5": {
+        "firstName": "Ajay",
+        "lastName": "Dilip",
+        "address": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "phone": "1234567890",
+        "ssn": "123456789",
+        "username": "dilipAjay",
+        "password": "Password123"
     }
 }

@@ -37,9 +37,16 @@ class RegisterPage {
         cy.xpath('//input[@id="repeatedPassword"]').type(data.password);
     }
 
+    userLogin(data){
+        cy.xpath('//input[@name="username"]').type(data.username);
+        cy.xpath('//input[@name="password"]').type(data.password);
+        cy.xpath('//input[@value="Log In"]').click();
+        cy.wait(2000); // wait for 2 seconds
+    }
+
     submit(){
         cy.xpath('//input[@value="Register"]').click();
-        cy.wait(2000); // wait for 2 seconds
+        // cy.wait(500); // wait for 0.5 seconds
     }
 
     logoutButton(){

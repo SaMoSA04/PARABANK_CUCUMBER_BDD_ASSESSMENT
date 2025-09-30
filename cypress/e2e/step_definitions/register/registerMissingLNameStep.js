@@ -3,6 +3,14 @@ const RegisterPage = require('../../pages/RegisterPage');
 
 const registerPage = new RegisterPage();
 
+/*
+  Steps:
+  • Launch the URL and navigate to Registration page
+  • Fill out all the required fields, except last name, and submit the form
+  • Verify error message for missing last name field
+*/
+
+
 Given('the user is on the registration page for user2',  () => {
   registerPage.visit();
   cy.screenshot('URL-HomePage');
